@@ -2,37 +2,14 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <sys/time.h>
+#include <sys/types.h>
+#include "osfreq.c"
 
 static double cpufrequency = 0;
 
 static void init(void)
 {
-  FILE *f;
-  double result;
-  int s;
-
-  f = fopen("/sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq", "r");
-  if (f) {
-    s = fscanf(f,"%lf",&result);
-    fclose(f);
-    if (s > 0) {
-      cpufrequency = 1000.0 * result;
-      return;
-    }
-  }
-
-  f = fopen("/proc/cpuinfo","r");
-  if (!f) return;
-
-  for (;;) {
-    s = fscanf(f,"cpu MHz : %lf",&result);
-    if (s > 0) break;
-    if (s == 0) s = fscanf(f,"%*[^\n]\n");
-    if (s < 0) { result = 0; break; }
-  }
-  fclose(f);
-
-  cpufrequency = 1000000.0 * result;
+  cpufrequency = osfreq();
 }
 
 long long cpucycles_gettimeofday(void)

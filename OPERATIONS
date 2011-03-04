@@ -1,10 +1,11 @@
-crypto_verify :_BYTES (const unsigned char *,const unsigned char *)
-crypto_core :_OUTPUTBYTES:_INPUTBYTES:_KEYBYTES:_CONSTBYTES (unsigned char *,const unsigned char *,const unsigned char *,const unsigned char *)
-crypto_hashblocks :_STATEBYTES:_BLOCKBYTES (unsigned char *,const unsigned char *,unsigned long long)
-crypto_hash :_BYTES (unsigned char *,const unsigned char *,unsigned long long)
-crypto_stream :_xor:_KEYBYTES:_NONCEBYTES (unsigned char *,unsigned long long,const unsigned char *,const unsigned char *):_xor(unsigned char *,const unsigned char *,unsigned long long,const unsigned char *,const unsigned char *)
-crypto_onetimeauth :_verify:_BYTES:_KEYBYTES (unsigned char *,const unsigned char *,unsigned long long,const unsigned char *):_verify(const unsigned char *,const unsigned char *,unsigned long long,const unsigned char *)
-crypto_auth :_verify:_BYTES:_KEYBYTES (unsigned char *,const unsigned char *,unsigned long long,const unsigned char *):_verify(const unsigned char *,const unsigned char *,unsigned long long,const unsigned char *)
-crypto_secretbox :_open:_KEYBYTES:_NONCEBYTES:_ZEROBYTES:_BOXZEROBYTES (unsigned char *,const unsigned char *,unsigned long long,const unsigned char *,const unsigned char *):_open(unsigned char *,const unsigned char *,unsigned long long,const unsigned char *,const unsigned char *)
-crypto_scalarmult :_base:_BYTES:_SCALARBYTES (unsigned char *,const unsigned char *,const unsigned char *):_base(unsigned char *,const unsigned char *)
-crypto_box :_open:_keypair:_beforenm:_afternm:_open_afternm:_PUBLICKEYBYTES:_SECRETKEYBYTES:_BEFORENMBYTES:_NONCEBYTES:_ZEROBYTES:_BOXZEROBYTES (unsigned char *,const unsigned char *,unsigned long long,const unsigned char *,const unsigned char *,const unsigned char *):_open(unsigned char *,const unsigned char *,unsigned long long,const unsigned char *,const unsigned char *,const unsigned char *):_keypair(unsigned char *,unsigned char *):_beforenm(unsigned char *,const unsigned char *,const unsigned char *):_afternm(unsigned char *,const unsigned char *,unsigned long long,const unsigned char *,const unsigned char *):_open_afternm(unsigned char *,const unsigned char *,unsigned long long,const unsigned char *,const unsigned char *)
+crypto_verify
+crypto_core
+crypto_hashblocks
+crypto_hash
+crypto_stream
+crypto_onetimeauth
+crypto_auth
+crypto_secretbox
+crypto_scalarmult
+crypto_box
+crypto_sign
