@@ -1,0 +1,7 @@
+A mirror of Daniel Bernstein (djb) and Tanja Lange's "NaCl: Networking and Cryptography library",
+tagged for each release.  The main distribution is bereft of public repository or even a changelog;
+this is kept for version sanity.
+
+  main site: http://nacl.cr.yp.to/
+
+Release: 20090405
